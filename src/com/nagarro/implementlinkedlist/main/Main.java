@@ -21,6 +21,7 @@ import java.util.Scanner;
 
 import com.nagarro.implementlinkedlist.exception.InvalidValuesException;
 import com.nagarro.implementlinkedlist.service.LinkedList;
+import com.nagarro.implementlinkedlist.utils.InputValidationUtil;
 
 public class Main {
     private static final String WELCOME = "Welcome!....";
@@ -83,21 +84,25 @@ public class Main {
         switch (choice) {
         case 1:
             System.out.println(ENTER_ELEMENT_TO_BE_ADDED);
-            int firstValue = scan.nextInt();
+            String valueToBeAddFirst = scan.next();
+            int firstValue = new InputValidationUtil().inputValidation(valueToBeAddFirst);
             linkedList.addFirst(firstValue);
             break;
 
         case 2:
             System.out.println(ENTER_ELEMENT_TO_BE_ADDED);
-            int lastValue = scan.nextInt();
+            String valueToBeAddLast = scan.next();
+            int lastValue = new InputValidationUtil().inputValidation(valueToBeAddLast);
             linkedList.addLast(lastValue);
             break;
 
         case 3:
             System.out.println(ENTER_POSITION);
-            int position = scan.nextInt();
+            String positionForAdd = scan.next();
+            int position = new InputValidationUtil().inputValidation(positionForAdd);
             System.out.println(ENTER_ELEMENT_TO_BE_ADDED);
-            int positionValue = scan.nextInt();
+            String valueToBeAdd = scan.next();
+            int positionValue = new InputValidationUtil().inputValidation(valueToBeAdd);
             linkedList.addPosition(position, positionValue);
             break;
 
@@ -111,7 +116,8 @@ public class Main {
 
         case 6:
             System.out.println(ENTER_POSITION);
-            int removePosition = scan.nextInt();
+            String positionForRemove = scan.next();
+            int removePosition = new InputValidationUtil().inputValidation(positionForRemove);
             linkedList.removeAtPostion(removePosition);
             break;
 
