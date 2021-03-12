@@ -1,3 +1,20 @@
+/*
+* Class name: LinkedList
+*
+* Version info: jdk 1.8
+*
+* Copyright notice:
+* 
+* Author info: Arpit Garg
+*
+* Creation date: 12/Mar/2021
+*
+* Last updated By: Arpit Garg
+*
+* Last updated Date: 12/Mar/2021
+*
+* Description: Validate the user eneterd input
+*/
 package com.nagarro.implementlinkedlist.utils;
 
 import java.util.Scanner;
@@ -8,6 +25,12 @@ public class InputValidationUtil {
     private static final String INVALID_INPUT = "Invalid input !";
     private Scanner scan = new Scanner(System.in);
 
+    /**
+     * Validate the user input
+     * 
+     * @param inputValue
+     * @return
+     */
     public int inputValidation(String inputValue) {
         boolean flag = true;
         int value = 0;
