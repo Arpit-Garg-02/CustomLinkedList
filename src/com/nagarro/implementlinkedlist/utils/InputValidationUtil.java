@@ -1,5 +1,5 @@
 /*
-* Class name: LinkedList
+* Class name: InputValidationUtil
 *
 * Version info: jdk 1.8
 *
