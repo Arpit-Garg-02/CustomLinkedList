@@ -11,22 +11,28 @@
 *
 * Last updated By: Arpit Garg
 *
-* Last updated Date: 11/Mar/2021
+* Last updated Date: 16/Mar/2021
 *
 * Description: LinkedList class for creating and do operations
 */
 package com.nagarro.implementlinkedlist.service;
 
+import java.util.Iterator;
+
 import com.nagarro.implementlinkedlist.exception.InvalidValuesException;
 import com.nagarro.implementlinkedlist.model.Node;
 
-public class LinkedList {
+public class LinkedList implements Iterable<Object> {
     private static final String LIST_IS_EMPTY = "List is empty";
     private static final String NO_VALUE = "No Value";
     private static final String WRONG_INDEX_ENTERED = "Wrong Index Entered";
     private Node head;
     private Node tail;
     private int size = 0;
+
+    public Node getHead() {
+        return head;
+    }
 
     /**
      * Add value at the first of linked list
@@ -213,16 +219,14 @@ public class LinkedList {
     }
 
     /**
-     * @return LinkedList in the String form
+     * @return custom iterator for linked list
      */
-    public String toString() {
-        String output = "";
-        Node temp = head;
-        while (temp != null) {
-            output += " " + temp.getValue();
-            temp = temp.getNext();
+    public void customIterator(LinkedList list) {
+        Iterator itr = list.iterator();
+        System.out.println(itr.hasNext());
+        while (itr.hasNext()) {
+            System.out.println(itr.next());
         }
-        return "[" + output + " ]";
     }
 
     /**
@@ -234,5 +238,13 @@ public class LinkedList {
             System.out.print(temp.getValue() + " ");
             temp = temp.getNext();
         }
+    }
+
+    /**
+     * override method for iterator
+     */
+    @Override
+    public Iterator<Object> iterator() {
+        return new LinkedListIterator(this.getHead());
     }
 }

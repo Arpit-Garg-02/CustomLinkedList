@@ -66,7 +66,8 @@ public class Main {
             System.out.println(_10_ITERATOR);
             System.out.println(_11_TRAVERSE);
             System.out.println(ENTER_YOUR_CHOICE);
-            int choice = scan.nextInt();
+            String choiceForOperation = scan.next();
+            int choice = new InputValidationUtil().inputValidation(choiceForOperation);
             choiceAction(choice, linkedList);
             System.out.println(PRESS_Y_FOR_CONTINUE);
             ch = scan.next().charAt(0);
@@ -134,7 +135,7 @@ public class Main {
             break;
 
         case 10:
-            System.out.println(linkedList.toString());
+            linkedList.customIterator(linkedList);
             break;
 
         case 11:
