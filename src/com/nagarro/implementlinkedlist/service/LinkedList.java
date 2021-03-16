@@ -223,7 +223,6 @@ public class LinkedList implements Iterable<Object> {
      */
     public void customIterator(LinkedList list) {
         Iterator itr = list.iterator();
-        System.out.println(itr.hasNext());
         while (itr.hasNext()) {
             System.out.println(itr.next());
         }
